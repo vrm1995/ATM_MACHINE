@@ -1,0 +1,31 @@
+<h4>Hello {{ username}}</h4>
+<br />
+<h5>Your mobile number: {{mobile}}</h5>
+<h6>Enter below to add/update mobile number.</h6>
+<br />
+<form action="">
+  <div class="row">
+    <div class="col-md-3">
+      <input value="{{mobile}}" type="text" placeholder="Enter 10 digits" maxlength="10" [(ngModel)]="mobile" [ngModelOptions]="{standalone: true}"
+             id="mobile" class="form-control" />
+    </div>
+    <div class="col-md-3">
+      <button type="button" (click)="validateAndsave()" class="col-md-6 btn btn-primary">Enter</button>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div id="message" class="col-md-6">
+    </div>
+  </div>
+  <br />
+  <br />
+  <div class="row">
+    <div class="col-md-1">
+      <button (click)="backtohome()" class="btn btn-primary">Back</button>
+    </div>
+    <div class="col-md-1">
+      <button (click)="cancel()" class="btn btn-primary">Cancel</button>
+    </div>
+  </div>
+</form>

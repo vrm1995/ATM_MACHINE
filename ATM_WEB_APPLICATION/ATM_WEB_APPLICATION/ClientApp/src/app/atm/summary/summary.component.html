@@ -1,0 +1,39 @@
+<h4>Welcome {{ username}}</h4>
+<br />
+<h5>Last 10 transactions:</h5>
+<br />
+
+<ejs-grid [dataSource]='rowData'
+          width="100%"
+          id="transactionsGrid"
+          #transactionsGrid
+          gridLines='Both'
+          [pageSettings]='{ pageSize: 5 }'
+          [allowPaging]='true'
+          >
+  <e-columns>
+    <e-column clipMode='EllipsisWithTooltip' field='userName' headerText='Username'></e-column>
+    <e-column clipMode='EllipsisWithTooltip' field='amount' headerText='Amount'></e-column>
+    <e-column clipMode='EllipsisWithTooltip' field="balance" headerText="Balance"></e-column>
+    <e-column clipMode='EllipsisWithTooltip' field="type" headerText="Type">
+      <ng-template #template let-data>
+        <span>{{ data.type==0 ? 'Deposit' : 'Withdraw' }}</span>
+      </ng-template>
+    </e-column>
+    <e-column clipMode='EllipsisWithTooltip' field="time" [format]="formatOptions" headerText="Date"></e-column>
+  </e-columns>
+</ejs-grid>
+
+<br />
+<br />
+<div class="row">
+  <div class="col-md-1">
+    <button (click)="backtohome()" class="btn btn-primary">Back</button>
+  </div>
+  <div class="col-md-1">
+    <button (click)="cancel()" class="btn btn-primary">Cancel</button>
+  </div>
+</div>
+
+
+

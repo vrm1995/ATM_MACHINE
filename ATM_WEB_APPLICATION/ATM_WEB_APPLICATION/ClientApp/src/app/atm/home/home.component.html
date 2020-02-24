@@ -1,0 +1,50 @@
+<h4>Welcome {{ username}}</h4>
+<br />
+<h5>Please select any menu to proceed:</h5>
+<br />
+<form action="">
+  <div class="row">
+    <div class="col-md-6">
+      <button id="checkbalance" (click)="checkbalance()" class="btn btn-primary form-control col-md-6">
+        Balance
+      </button>
+    </div>
+    <div class="col-md-6">
+      <button id="summary" (click)="summary()" class="btn btn-primary form-control col-md-6">
+        Summary
+      </button>
+    </div>
+  </div>
+  <br />
+  <br />
+  <div class="row">
+    <div class="col-md-6">
+      <button id="withdraw" (click)="withdraw()" class="btn btn-primary form-control col-md-6">
+        Withdraw
+      </button>
+    </div>
+    <div class="col-md-6">
+      <button id="deposit" (click)="deposit()" class="btn btn-primary form-control col-md-6">
+        Deposit
+      </button>
+    </div>
+  </div>
+  <br />
+  <br />
+  <div class="row">
+    <div class="col-md-6">
+      <button id="updatemobileno" (click)="updatemobileno()" class="btn btn-primary form-control col-md-6">
+        Update Mobile No.
+      </button>
+    </div>
+    <div class="col-md-6">
+      <button id="updatemobileno" (click)="logOut()" class="btn btn-primary form-control col-md-6">
+        Cancel
+      </button>
+    </div>
+  </div>
+
+  <br />
+
+
+</form>

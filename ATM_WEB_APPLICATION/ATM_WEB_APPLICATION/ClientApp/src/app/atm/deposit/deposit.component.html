@@ -1,0 +1,63 @@
+<h4>Hello {{ username}}</h4>
+<br />
+<br />
+<form action="">
+
+  <h6>Please enter the denominations:</h6>
+  <br />
+  <div class="row">
+    <div class="col-md-3">
+      <label class="row">Number of 2000 INR Notes:</label>
+    </div>
+    <div class="col-md-3">
+      <input placeholder="Enter 0 if no notes" type="number" [(ngModel)]="twothousands" [ngModelOptions]="{standalone: true}"
+             id="twothousands" class="form-control" />
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-md-3">
+      <label class="row">Number of 200 INR Notes:</label>
+    </div>
+    <div class="col-md-3">
+      <input placeholder="Enter 0 if no notes" type="number" [(ngModel)]="twohundreds" [ngModelOptions]="{standalone: true}"
+             id="twohundreds" class="form-control" />
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-md-3">
+      <label class="row">Number of 100 INR Notes:</label>
+    </div>
+    <div class="col-md-3">
+      <input placeholder="Enter 0 if no notes" type="number" [(ngModel)]="hundreds" [ngModelOptions]="{standalone: true}"
+             id="hundreds" class="form-control" />
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div id="total" class="col-md-6">
+      {{getTotal()}}
+    </div>
+  </div>
+  <br /><br />
+  <div class="col-md-3">
+    <button type="button" (click)="validateAnddeposit()" class="col-md-6 btn btn-primary">Enter</button>
+  </div>
+  <br />
+  <div class="row">
+    <div id="message" class="col-md-6">
+      {{message}}
+    </div>
+  </div>
+  <br />
+  <br />
+  <div class="row">
+    <div class="col-md-1">
+      <button (click)="backtohome()" class="btn btn-primary">Back</button>
+    </div>
+    <div class="col-md-1">
+      <button (click)="cancel()" class="btn btn-primary">Cancel</button>
+    </div>
+  </div>
+</form>

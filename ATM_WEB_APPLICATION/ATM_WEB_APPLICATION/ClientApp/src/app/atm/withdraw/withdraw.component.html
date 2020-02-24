@@ -1,0 +1,52 @@
+<h4>Hello {{ username}}</h4>
+<br />
+<h5>Enter the amount to withdraw:</h5>
+<h6>(Multiples of 100)</h6>
+<br />
+<form action="">
+  <div class="row">
+    <div class="col-md-3">
+      <input type="number" [(ngModel)]="amount" [ngModelOptions]="{standalone: true}"
+             id="amount" class="form-control" />
+    </div>
+    <div class="col-md-3">
+      <button type="button" (click)="validateAndwithdraw()" class="col-md-6 btn btn-primary">Enter</button>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div id="message" class="col-md-6">
+    </div>
+  </div>
+  <br />
+  <div *ngIf="amountWithdrawn" id="dispenser" class="container">
+    <h6>Notes Dispenser Counter:</h6>
+    <table class="table table-bordered">
+      <thead >
+        <tr >
+          <th >2000 Note</th>
+          <th >200 Note</th>
+          <th >100 Note</th>
+          <th >Take Cash</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr >
+          <td >{{twoThousandNotes}}</td>
+          <td>{{twoHundredNotes}}</td>
+          <td >{{hundredNotes}}</td>
+          <td ><button class="btn btn-outline-success " (click)="backtohome()">Collect Cash</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br /><br />
+  <div class="row">
+    <div class="col-md-1">
+      <button (click)="backtohome()" class="btn btn-primary">Back</button>
+    </div>
+    <div class="col-md-1">
+      <button (click)="cancel()" class="btn btn-primary">Cancel</button>
+    </div>
+  </div>
+</form>
